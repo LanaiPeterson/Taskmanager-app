@@ -2,7 +2,20 @@ import TaskList from './components/TaskList/TaskList';
 import TaskFilter from './components/TaskFilter/TaskFilter';
 import Types from './components/Types/index'
 import { STATUS, PRIORITY } from './types';
+import TaskForm from './TaskForm';
 
+function App() {
+  const handleTaskSubmit = (task) => {
+    console.log('Task submitted:', task);
+  };
+
+  return (
+    <div className="App">
+      <h1>Task Manager</h1>
+      <TaskForm onSubmit={handleTaskSubmit} />
+    </div>
+  );
+}
 
 const initialTasks = [
   { id: 1, title: 'Task 1', description: 'Description 1', status: STATUS.PENDING, priority: PRIORITY.LOW, dueDate: '2025-12-31' },
